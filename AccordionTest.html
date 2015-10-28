@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实现Accordion效果</title>
+    <link href="css/accordion.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-2.0.2.js"></script>
+</head>
+<script type="text/javascript">
+    $(function(){  //ready方法
+        $('.clsHead').click(function(){
+            if($('.clsContent').is(':visible')){
+                $('.clsHead span img').attr('src','imgs/a1.gif');
+                $('.clsContent').css('display','none');
+            }else{
+                $('.clsHead span img').attr('src','imgs/a2.gif');
+                $('.clsContent').css('display','block');
+            }
+        });
+        $('.clsBot').click(function(){
+            if($('.clsBot > a').text()=='简化'){
+                $('.clsBot > a').text('更多');
+                $('ul li:gt(4):not(:last)').hide();
+            }else{
+                $('.clsBot > a').text('简化');
+                $('ul li:gt(4):not(:last)').show().addClass('GetFocus');
+            }
+        });
+    })
+</script>
+<body>
+<div id="divFrame">
+    <div class="clsHead">
+        <h3> 图书分类 </h3>
+        <span><img src="imgs/a2.gif" alt=""/></span>
+    </div>
+    <div class="clsContent">
+        <ul>
+            <li><a href="#"> 小说 </a><i> ( 1110 ) </i></li>
+            <li><a href="#"> 文艺 </a><i> ( 230 ) </i></li>
+            <li><a href="#"> 青春 </a><i> ( 1430 ) </i></li>
+            <li><a href="#"> 少儿 </a><i> ( 1560 ) </i></li>
+            <li><a href="#"> 生活 </a><i> ( 870 ) </i></li>
+            <li><a href="#"> 社科 </a><i> ( 1460 ) </i></li>
+            <li><a href="#"> 管理 </a><i> ( 1450 ) </i></li>
+            <li><a href="#"> 计算机 </a><i> ( 1780 ) </i></li>
+            <li><a href="#"> 教育 </a><i> ( 930 ) </i></li>
+            <li><a href="#"> 工具书 </a><i> ( 3450 ) </i></li>
+            <li><a href="#"> 引进版 </a><i> ( 980 ) </i></li>
+            <li><a href="#"> 其他类 </a><i> ( 3230 ) </i></li>
+        </ul>
+        <div class="clsBot"><a href="#"> 简化 </a>
+            <img src="imgs/a5.gif" alt=""/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

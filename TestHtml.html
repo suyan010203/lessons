@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title id="tile">Example</title>
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/jquery-2.0.2.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $("img:odd").mouseenter(function (e) {
+                $(this).css("opacity", 0.5);
+            }).mouseout(function (e) {
+                $(this).css("opacity", 1.0);
+            });
+            $('img').each(function(img){
+                console.log("Í¼Ïñ"+img);
+            });
+        });
+    </script>
+</head>
+<body>
+<h1 id="test">Jacqui's Flower Shop</h1>
+<form method="post">
+    <div id="oblock">
+        <div class="dtable">
+            <div id="row1" class="drow">
+                <div class="dcell">
+                    <img src="imgs/aster.png"/><label for="aster">Aster:</label>
+                    <input name="aster" value="0" required>
+                </div>
+                <div class="dcell">
+                    <img src="imgs/daffodil.png"/><label for="daffodil">Daffodil:</label>
+                    <input name="daffodil" value="0" required >
+                </div>
+                <div class="dcell">
+                    <img src="imgs/rose.png"/><label for="rose">Rose:</label>
+                    <input name="rose" value="0" required>
+                </div>
+            </div>
+            <div id="row2" class="drow">
+                <div class="dcell">
+                    <img src="imgs/peony.png"/><label for="peony">Peony:</label>
+                    <input name="peony" value="0" required>
+                </div>
+                <div class="dcell">
+                    <img src="imgs/primula.png"/><label for="primula">Primula:</label>
+                    <input name="primula" value="0" required>
+                </div>
+                <div class="dcell">
+                    <img src="imgs/snowdrop.png"/><label for="snowdrop">Snowdrop:</label>
+                    <input name="snowdrop" value="0" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="buttonDiv"><button type="submit">Place Order</button></div>
+</form>
+<!--<script type="text/javascript">
+    var alpha = 0.6;
+    var oDiv = document.getElementsByTagName('img');
+
+    for(var i=0;i<oDiv.length;i++) {
+        var img=oDiv[i];
+        if(i%2==0) {
+            img.onmouseover = function (e) {
+                if (img.style.filter) {//IE
+                    img.style.filter = 'alpha(opacity:' + alpha * 100 + ')';
+                } else {
+                    img.style.opacity = alpha;//·ÇIE
+                }
+            };
+            img.onmouseout = function (e) {
+                if (img.style.filter) {
+                    img.style.filter = 'alpha(opacity:100)';
+                } else {
+                    img.style.opacity = 1;
+                }
+            };
+        }
+    }
+</script>-->
+
+</body>
+</html>

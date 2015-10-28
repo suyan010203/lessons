@@ -1,0 +1,10 @@
+body{font-size:13px}
+#divFrame{border:solid 1px #666; width:301px;overflow:hidden}
+#divFrame .clsHead{background-color:#eee;padding:8px; height:18px;cursor:hand}
+#divFrame .clsHead h3{padding:0px;margin:0px;float:left}
+#divFrame .clsHead span{float:right;margin-top:3px}
+#divFrame .clsContent{padding:8px}
+#divFrame .clsContent ul {list-style-type:none; margin:0px;padding:0px}
+#divFrame .clsContent ul li{ float:left; width:95px;height:23px;line-height:23px}
+#divFrame .clsBot{float:right;padding-top:5px; padding-bottom:5px}
+.GetFocus{background-color:#eee;}
