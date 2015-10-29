@@ -6,13 +6,33 @@
     <link href="css/table.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="js/jquery-2.0.2.js"></script>
     <script type="text/javascript">
-        $(function () {
-            $('table tr:nth-child(odd)').css('background-color','#eee');
-            //取得删除按钮的jquery对象
-            $('#btnDel').click(function(){
-                $('table tr td input:checked').each(function(e){
-                   $('#'+this.value).remove();
-                });
+        $(function(){
+            $('#chkAll').click(function(){
+                if(this.checked){//查找全选按钮选中
+                    $('table tr td input[type=checkbox]').not('#chkAll').each(function (index,chk) {
+                        this.checked=true;
+                    })
+                }else{
+                    $('table tr td input[type=checkbox]').not('#chkAll').each(function(index,chk){
+                        this.checked=false;
+                    })
+                }
+                // if($('#chkAll')[0].checked){}
+            });
+            $('.btn').click(function(){
+                $('table tr td input[type=checkbox]').not('#chkAll').each(function (index,chk) {
+                    if(this.checked){
+                        // $('#'+this.value).remove();
+                        $("table tr[id=" + this.value + "]").remove(); //获取选中的值，并删除该值所在的行
+                    }
+                })
+            });
+            $('table tr td img').mouseover(function(e){
+                var offX=5;offY=5;
+                $('#imgTip').attr('src',this.src).css({top:(e.pageX+offX)+'px',left:(e.pageY+offY)+'px'}).show();
+            });
+            $('table tr td img').mouseout(function(){
+                $('#imgTip').hide();
             });
         })
     </script>
